@@ -16,7 +16,7 @@ func entryPoint(ctx *cli.Context) error {
 	ncfg := nagioscfg.NewNagiosCfg()
 	err := ncfg.LoadStdin()
 	if err != nil {
-		return cli.NewExitError("Unable to load STDIN", 1)
+		return cli.NewExitError("Unable to load STDIN", 74) // EX_IOERR=74 # input/output error (from sysexits.h)
 	}
 
 	if outfile == "" {
