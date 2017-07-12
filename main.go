@@ -24,7 +24,7 @@ func entryPoint(ctx *cli.Context) error {
 	} else {
 		err := ncfg.WriteFile(outfile, true)
 		if err != nil {
-			return cli.NewExitError(err.Error(), 73) // EX_CANTCREAT=73 # can't create (user) output file
+			return cli.NewExitError(err.Error(), 73) // EX_CANTCREAT=73 # can't create (user) output file (from sysexits.h)
 		}
 	}
 	return nil
